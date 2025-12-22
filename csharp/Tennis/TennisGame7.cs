@@ -31,7 +31,7 @@ public class TennisGame7 : ITennisGame
             result += ScoreHelper.GetScoreWhenEquality(player1Score);
 
         }
-        else if (player1Score >= 4 || player2Score >= 4)
+        else if (ScoreHelper.IsWin(player1Score, player2Score))
         {
             // end-game score
             result += ScoreHelper.GetScoreWhenWin(player1Score, player2Score, player1Name, player2Name);

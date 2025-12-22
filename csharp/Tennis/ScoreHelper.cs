@@ -25,4 +25,8 @@ public class ScoreHelper
         return $"Win for {player2Name}";
 
     }
+    public static bool IsWin(int score1, int score2)
+    {
+        return score1 >= 4 || score2 >= 4;
+    }
 }
