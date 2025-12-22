@@ -20,18 +20,10 @@ namespace Tennis
         public string GetScore()
         {
             var score = "";
-            if (p1point == p2point && p1point < 3)
+            if (p1point == p2point)
             {
-                if (p1point == 0)
-                    score = "Love";
-                if (p1point == 1)
-                    score = "Fifteen";
-                if (p1point == 2)
-                    score = "Thirty";
-                score += "-All";
+                return GetScoreWhenEquality();
             }
-            if (p1point == p2point && p1point > 2)
-                score = "Deuce";
 
             if (p1point > 0 && p2point == 0)
             {
@@ -122,6 +114,16 @@ namespace Tennis
                 IncremetP1Score();
             else
                 IncremetP2Score();
+        }
+        private string GetScoreWhenEquality()
+        {
+            return p1point switch
+            {
+                0 => "Love-All",
+                1 => "Fifteen-All",
+                2 => "Thirty-All",
+                _ => "Deuce",
+            };
         }
 
     }
