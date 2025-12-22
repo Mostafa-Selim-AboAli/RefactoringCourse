@@ -27,23 +27,10 @@ namespace Tennis
             var tempScore = 0;
             if (m_score1 == m_score2)
             {
-                switch (m_score1)
-                {
-                    case 0:
-                        score = "Love-All";
-                        break;
-                    case 1:
-                        score = "Fifteen-All";
-                        break;
-                    case 2:
-                        score = "Thirty-All";
-                        break;
-                    default:
-                        score = "Deuce";
-                        break;
-
-                }
+                score = GetScoreWhenEquality();
+                return score;
             }
+
             else if (m_score1 >= 4 || m_score2 >= 4)
             {
                 var minusResult = m_score1 - m_score2;
@@ -76,6 +63,17 @@ namespace Tennis
                 }
             }
             return score;
+        }
+
+        private string GetScoreWhenEquality()
+        {
+            return m_score1 switch
+            {
+                0 => "Love-All",
+                1 => "Fifteen-All",
+                2 => "Thirty-All",
+                _ => "Deuce",
+            };
         }
     }
 }
