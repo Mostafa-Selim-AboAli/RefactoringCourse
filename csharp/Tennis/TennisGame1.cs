@@ -30,7 +30,7 @@ namespace Tennis
 
             }
 
-            if (ScoreHelper.IsWin(m_score1, m_score1))
+            if (ScoreHelper.IsWin(m_score1, m_score2))
             {
                 return ScoreHelper.GetScoreWhenWin(m_score1, m_score2, player1Name, player2Name);
             }
