@@ -32,14 +32,14 @@ namespace Tennis
 
             if (m_score1 >= 4 || m_score2 >= 4)
             {
-                return GetScoreWhenWin();
+                return ScoreHelper.GetScoreWhenWin(m_score1, m_score2, player1Name, player2Name);
             }
-            return GetScoreForAll();
+            return GetScoreRegular();
 
 
         }
 
-        private string GetScoreForAll()
+        private string GetScoreRegular()
         {
             string score = "";
             for (var i = 1; i < 3; i++)
@@ -67,19 +67,7 @@ namespace Tennis
             return score;
         }
 
-        private string GetScoreWhenWin()
-        {
 
-            var minusResult = m_score1 - m_score2;
-            if (minusResult == 1)
-                return $"Advantage {player1Name}";
-            if (minusResult == -1)
-                return $"Advantage {player2Name}";
-            if (minusResult >= 2)
-                return $"Win for {player1Name}";
-            return $"Win for {player2Name}";
-
-        }
 
     }
 }
