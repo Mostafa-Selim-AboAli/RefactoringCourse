@@ -26,7 +26,7 @@ namespace Tennis
 
             if (m_score1 == m_score2)
             {
-                return GetScoreWhenEquality();
+                return ScoreHelper.GetScoreWhenEquality(m_score1);
 
             }
 
@@ -81,16 +81,6 @@ namespace Tennis
 
         }
 
-        private string GetScoreWhenEquality()
-        {
-            return m_score1 switch
-            {
-                0 => "Love-All",
-                1 => "Fifteen-All",
-                2 => "Thirty-All",
-                _ => "Deuce",
-            };
-        }
     }
 }
 

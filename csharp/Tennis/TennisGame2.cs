@@ -22,7 +22,7 @@ namespace Tennis
             var score = "";
             if (p1point == p2point)
             {
-                return GetScoreWhenEquality();
+                return ScoreHelper.GetScoreWhenEquality(p1point);
             }
 
             if (p1point > 0 && p2point == 0)
