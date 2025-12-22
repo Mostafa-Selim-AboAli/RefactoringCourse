@@ -106,12 +106,12 @@ namespace Tennis
 
 
 
-        private void P1Score()
+        private void IncremetP1Score()
         {
             p1point++;
         }
 
-        private void P2Score()
+        private void IncremetP2Score()
         {
             p2point++;
         }
@@ -119,9 +119,9 @@ namespace Tennis
         public void WonPoint(string player)
         {
             if (player == player1Name)
-                P1Score();
+                IncremetP1Score();
             else
-                P2Score();
+                IncremetP2Score();
         }
 
     }
