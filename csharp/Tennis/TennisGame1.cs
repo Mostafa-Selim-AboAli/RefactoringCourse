@@ -15,7 +15,7 @@ namespace Tennis
 
         public void WonPoint(string playerName)
         {
-            if (playerName == "player1")
+            if (playerName == player1Name)
                 m_score1 += 1;
             else
                 m_score2 += 1;
@@ -72,12 +72,12 @@ namespace Tennis
 
             var minusResult = m_score1 - m_score2;
             if (minusResult == 1)
-                return "Advantage player1";
+                return $"Advantage {player1Name}";
             if (minusResult == -1)
-                return "Advantage player2";
+                return $"Advantage {player2Name}";
             if (minusResult >= 2)
-                return "Win for player1";
-            return "Win for player2";
+                return $"Win for {player1Name}";
+            return $"Win for {player2Name}";
 
         }
 
