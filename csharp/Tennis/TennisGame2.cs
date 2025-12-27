@@ -76,13 +76,14 @@ namespace Tennis
 
         private string ClacPlayerResult(int palyerPoint)
         {
-            if (palyerPoint == 1)
-                return "Fifteen";
-            if (palyerPoint == 2)
-                return "Thirty";
-            if (palyerPoint == 3)
-                return "Forty";
-            return "Love";
+            return palyerPoint switch
+            {
+                1 => "Fifteen",
+                2 => "Thirty",
+                3 => "Forty",
+                _ => "Love",
+            };
+
         }
 
         private string CalcScoreWhenEquality()
