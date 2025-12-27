@@ -31,7 +31,7 @@ namespace Tennis
             }
             if (m_score1 >= 4 || m_score2 >= 4)
             {
-                return CalaScoreWhenWin();
+                return CalaScoreWhenAdvantageOrWin();
             }
 
             return CalcScoreRegular();
@@ -70,7 +70,7 @@ namespace Tennis
             return score;
         }
 
-        private string CalaScoreWhenWin()
+        private string CalaScoreWhenAdvantageOrWin()
         {
 
             var minusResult = m_score1 - m_score2;
