@@ -99,19 +99,14 @@ namespace Tennis
 
         private string CalcScoreWhenEquality()
         {
-            if (p1point < 3)
+            return p1point switch
             {
+                0 => "Love-All",
+                1 => "Fifteen-All",
+                2 => "Thirty-All",
+                _ => "Deuce",
+            };
 
-                return p1point switch
-                {
-                    0 => "Love-All",
-                    1 => "Fifteen-All",
-                    2 => "Thirty-All",
-                    _ => "",
-                };
-
-            }
-            return "Deuce";
         }
 
         public void SetP1Score(int number)
