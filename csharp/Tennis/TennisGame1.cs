@@ -1,21 +1,14 @@
 namespace Tennis
 {
-    public class TennisGame1 : ITennisGame
+    public class TennisGame1(string player1Name, string player2Name) : ITennisGame
     {
         private int m_score1 = 0;
         private int m_score2 = 0;
-        private string player1Name;
-        private string player2Name;
 
-        public TennisGame1(string player1Name, string player2Name)
-        {
-            this.player1Name = player1Name;
-            this.player2Name = player2Name;
-        }
 
         public void WonPoint(string playerName)
         {
-            if (playerName == "player1")
+            if (playerName == player1Name)
                 m_score1 += 1;
             else
                 m_score2 += 1;
@@ -29,7 +22,7 @@ namespace Tennis
             {
                 return CalcScoreWhenEquality();
             }
-            if (m_score1 >= 4 || m_score2 >= 4)
+            if (IsScoreAdvantageOrWin())
             {
                 return CalaScoreWhenAdvantageOrWin();
             }
@@ -37,6 +30,11 @@ namespace Tennis
             return CalcScoreRegular();
 
 
+        }
+
+        private bool IsScoreAdvantageOrWin()
+        {
+            return m_score1 >= 4 || m_score2 >= 4;
         }
 
         private string CalcScoreRegular()
@@ -76,10 +74,10 @@ namespace Tennis
             var minusResult = m_score1 - m_score2;
             return minusResult switch
             {
-                1 => "Advantage player1",
-                -1 => "Advantage player2",
-                >= 2 => "Win for player1",
-                _ => "Win for player2"
+                1 => $"Advantage {player1Name}",
+                -1 => $"Advantage {player2Name}",
+                >= 2 => $"Win for {player1Name}",
+                _ => $"Win for {player2Name}"
             };
 
         }
