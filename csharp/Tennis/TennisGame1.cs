@@ -24,7 +24,7 @@ namespace Tennis
         public string GetScore()
         {
             string score = "";
-            var tempScore = 0;
+
             if (m_score1 == m_score2)
             {
                 score = CalcScoreWhenEquality();
@@ -37,6 +37,7 @@ namespace Tennis
             {
                 for (var i = 1; i < 3; i++)
                 {
+                    int tempScore;
                     if (i == 1) tempScore = m_score1;
                     else { score += "-"; tempScore = m_score2; }
                     switch (tempScore)
