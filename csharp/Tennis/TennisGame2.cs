@@ -25,12 +25,11 @@ namespace Tennis
                 if (p1point < 3)
                 {
                     if (p1point == 0)
-                        score = "Love";
+                        score = "Love-All";
                     if (p1point == 1)
-                        score = "Fifteen";
+                        score = "Fifteen-All";
                     if (p1point == 2)
-                        score = "Thirty";
-                    score += "-All";
+                        score = "Thirty-All";
                 }
                 else
                     score = "Deuce";
