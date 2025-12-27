@@ -101,14 +101,15 @@ namespace Tennis
         {
             if (p1point < 3)
             {
-                string score = "";
-                if (p1point == 0)
-                    score = "Love-All";
-                if (p1point == 1)
-                    score = "Fifteen-All";
-                if (p1point == 2)
-                    score = "Thirty-All";
-                return score;
+
+                return p1point switch
+                {
+                    0 => "Love-All",
+                    1 => "Fifteen-All",
+                    2 => "Thirty-All",
+                    _ => "",
+                };
+
             }
             return "Deuce";
         }
