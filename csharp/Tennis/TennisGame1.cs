@@ -23,21 +23,20 @@ namespace Tennis
 
         public string GetScore()
         {
-            string score = "";
+
 
             if (m_score1 == m_score2)
             {
-                score = CalcScoreWhenEquality();
+                return CalcScoreWhenEquality();
             }
-            else if (m_score1 >= 4 || m_score2 >= 4)
+            if (m_score1 >= 4 || m_score2 >= 4)
             {
-                score = CalaScoreWhenWin();
+                return CalaScoreWhenWin();
             }
-            else
-            {
-                score = CalcScoreRegular();
-            }
-            return score;
+
+            return CalcScoreRegular();
+
+
         }
 
         private string CalcScoreRegular()
