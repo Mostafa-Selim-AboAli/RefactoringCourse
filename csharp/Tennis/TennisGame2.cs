@@ -25,8 +25,18 @@ namespace Tennis
                 return CalcScoreWhenEquality();
             }
             string score;
+            score = CalcScoreAdvantageOrWin();
+            if (!string.IsNullOrWhiteSpace(score))
+                return score;
             score = CalcScoreRegular();
 
+
+
+            return score;
+        }
+        private string CalcScoreAdvantageOrWin()
+        {
+            string score = "";
             if (p1point > p2point && p2point >= 3)
             {
                 score = "Advantage player1";
@@ -47,7 +57,6 @@ namespace Tennis
             }
             return score;
         }
-
         private string CalcScoreRegular()
         {
 
