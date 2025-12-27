@@ -2,8 +2,8 @@ namespace Tennis;
 
 public class TennisGame1(string player1Name, string player2Name) : ITennisGame
 {
-    private int m_score1 = 0;
-    private int m_score2 = 0;
+    private byte m_score1 = 0;
+    private byte m_score2 = 0;
 
     public void WonPoint(string playerName)
     {
@@ -14,20 +14,13 @@ public class TennisGame1(string player1Name, string player2Name) : ITennisGame
     }
     public string GetScore()
     {
-
-
         if (m_score1 == m_score2)
-        {
             return CalcScoreWhenEquality();
-        }
+
         if (IsScoreAdvantageOrWin())
-        {
             return CalaScoreWhenAdvantageOrWin();
-        }
 
         return CalcScoreRegular();
-
-
     }
     private bool IsScoreAdvantageOrWin()
     {
@@ -37,7 +30,7 @@ public class TennisGame1(string player1Name, string player2Name) : ITennisGame
     {
         string score = "";
 
-        for (var i = 1; i < 3; i++)
+        for (byte i = 1; i < 3; i++)
         {
             int tempScore;
             if (i == 1)
