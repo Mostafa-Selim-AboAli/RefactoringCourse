@@ -50,18 +50,18 @@ namespace Tennis
 
         private string CalcScoreRegular()
         {
-            string score = "";
+
             if (p1point > 0 && p2point == 0)
             {
                 p1res = ClacPlayerResult(p1point);
                 p2res = ClacPlayerResult(p2point);
-                score = p1res + "-" + p2res;
+                return p1res + "-" + p2res;
             }
             if (p2point > 0 && p1point == 0)
             {
                 p1res = ClacPlayerResult(p1point);
                 p2res = ClacPlayerResult(p2point);
-                score = p1res + "-" + p2res;
+                return p1res + "-" + p2res;
             }
 
             if (p1point > p2point && p1point < 4)
@@ -69,16 +69,16 @@ namespace Tennis
                 p1res = ClacPlayerResult(p1point);
                 p2res = ClacPlayerResult(p2point);
 
-                score = p1res + "-" + p2res;
+                return p1res + "-" + p2res;
             }
             if (p2point > p1point && p2point < 4)
             {
                 p1res = ClacPlayerResult(p1point);
                 p2res = ClacPlayerResult(p2point);
-                score = p1res + "-" + p2res;
+                return p1res + "-" + p2res;
             }
+            return "";
 
-            return score;
         }
 
         private string ClacPlayerResult(int palyerPoint)
